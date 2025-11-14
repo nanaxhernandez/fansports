@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Ventas</h2>
+
+<form method="POST" action="/ventas/crear" class="row g-2 mb-4">
+    <div class="col-md-3"><input name="cliente" class="form-control" placeholder="ID Cliente" required></div>
+    <div class="col-md-3"><input name="empleado" class="form-control" placeholder="ID Empleado" required></div>
+    <div class="col-md-3"><input name="producto" class="form-control" placeholder="ID Producto" required></div>
+    <div class="col-md-1"><input name="cantidad" type="number" class="form-control" placeholder="Cant" required></div>
+    <div class="col-md-2"><button class="btn btn-primary w-100">Registrar Venta</button></div>
+</form>
+
+<p>Las ventas se registran usando procedimientos PL/SQL y generan factura automáticamente.</p>
+{% endblock %}

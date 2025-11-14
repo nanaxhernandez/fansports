@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Empleados</h2>
+
+<form method="POST" action="/empleados/crear" class="row g-2 mb-4">
+    <div class="col-md-2"><input name="nombre" class="form-control" placeholder="Nombre" required></div>
+    <div class="col-md-2"><input name="apellido" class="form-control" placeholder="Apellido"></div>
+    <div class="col-md-2"><input name="cargo" class="form-control" placeholder="Cargo"></div>
+    <div class="col-md-2"><input name="telefono" class="form-control" placeholder="Tel"></div>
+    <div class="col-md-2"><input name="correo" class="form-control" placeholder="Correo"></div>
+    <div class="col-md-1"><input name="sede" class="form-control" placeholder="ID Sede"></div>
+    <div class="col-md-1"><button class="btn btn-primary w-100">Guardar</button></div>
+</form>
+
+<table class="table">
+    <thead><tr><th>ID</th><th>Nombre</th><th>Apellido</th><th>Cargo</th><th>Tel</th><th>Correo</th></tr></thead>
+    <tbody>
+        {% for e in empleados %}
+        <tr>
+            <td>{{ e[0] }}</td>
+            <td>{{ e[1] }}</td>
+            <td>{{ e[2] }}</td>
+            <td>{{ e[3] }}</td>
+            <td>{{ e[4] }}</td>
+            <td>{{ e[5] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
